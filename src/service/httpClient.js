@@ -1,0 +1,14 @@
+import axios from "axios";
+
+const baseURL = "https://api.admin.u-code.io";
+
+const request = axios.create({
+  baseURL,
+  timeout: 100000,
+  headers: {
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnRfcGxhdGZvcm1faWQiOiIiLCJjbGllbnRfdHlwZV9pZCI6IjE4N2U0MGNkLWZjZjktNGMyNi05MTZhLWM0MWQ0M2Y4MzBmMiIsImRhdGEiOiJhZGRpdGlvbmFsIGpzb24gZGF0YSIsImV4cCI6MTcwMzc3NTY5OSwiaWF0IjoxNzAzNjg5Mjk5LCJpZCI6IjE5MmFlODhlLTM2OWMtNGZlYi04NTUyLTlmZTBhOTk3M2Q2MiIsImlwIjoiYWRkaXRpb25hbCBqc29uIGRhdGEiLCJsb2dpbl90YWJsZV9zbHVnIjoidXNlciIsInByb2plY3RfaWQiOiIxY2M0YzdlNS00Y2M2LTQ0MTUtYjA3NC1mMzMxYzZhMTNjYzEiLCJyb2xlX2lkIjoiOTkwZTYyZmQtMmUwNi00OGRmLWE5YzMtYWI3ZTYyYjM1YWVhIiwidGFibGVzIjpbXSwidXNlcl9pZCI6ImQ5ZmUyM2IzLTI5YjEtNDNiOC1hNmEyLWUwNWYxZGI3MzBhNyJ9.2H8sDiNWiD1Uy1VS_X3medQV8EyVC5KKzzZxDTPfE-g",
+  },
+});
+
+export default request;
