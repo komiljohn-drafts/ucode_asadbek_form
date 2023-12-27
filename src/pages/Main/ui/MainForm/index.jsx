@@ -18,14 +18,19 @@ export default function MainForm() {
   const methods = useForm();
 
   const onSubmit = (data) => {
-    console.log("data => ", {
-      ...data,
-      Development_stage: [data.Development_stage],
-      Business_category: [data.Business_category],
-    });
+    const textareaValues = Object.fromEntries(
+      Object.entries(data)
+        .filter((i) => i[1] && i[0].startsWith("textarea#"))
+        .map((i) => [i[0].split("textarea#")[1], `<p>${i[1]}</p>`])
+    );
     request
       .post("/v2/items/application?project-id=1cc4c7e5-4cc6-4415-b074-f331c6a13cc1", {
-        data: { ...data, Development_stage: [data.Development_stage], Business_category: [data.Business_category] },
+        data: {
+          ...data,
+          ...textareaValues,
+          Development_stage: [data.Development_stage],
+          Business_category: [data.Business_category],
+        },
       })
       .then(() => {
         methods.reset();
