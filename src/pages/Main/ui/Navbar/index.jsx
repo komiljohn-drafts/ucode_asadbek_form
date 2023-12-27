@@ -1,4 +1,5 @@
 import Container from "../../../../layouts/Container";
+import "./styles.module.scss";
 
 const Navbar = () => {
   return (
