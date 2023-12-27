@@ -21,8 +21,8 @@ export default function MainForm() {
     request
       .post("/v2/items/application?project-id=1cc4c7e5-4cc6-4415-b074-f331c6a13cc1", { data })
       .then(() => {
+        methods.reset();
         toast.success("Successfully created!");
-        methods.reset({});
       })
       .catch(() => {
         toast.error("Error has occured!");
