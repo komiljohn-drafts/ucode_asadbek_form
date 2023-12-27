@@ -1,11 +1,27 @@
-import { useFormContext } from "react-hook-form";
+import { Controller, useFormContext } from "react-hook-form";
 
 import cls from "./styles.module.scss";
 
-const TextAreaInput = ({ type = "text", name }) => {
-  const { register } = useFormContext();
+const TextAreaInput = ({ name }) => {
+  const { control } = useFormContext();
 
-  return <textarea className={cls.input} type={type} {...register("textarea#" + name)} />;
+  const onChangeHandler = (val) => {
+    return val ? val.replace("<p>", "").replace("</p>", "") : "";
+  };
+
+  return (
+    <Controller
+      control={control}
+      name={name}
+      render={({ field: { onChange, value } }) => (
+        <textarea
+          className={cls.input}
+          value={onChangeHandler(value)}
+          onChange={({ target: { value } }) => onChange(value ? `<p>${value}</p>` : "")}
+        />
+      )}
+    />
+  );
 };
 
 export default TextAreaInput;
