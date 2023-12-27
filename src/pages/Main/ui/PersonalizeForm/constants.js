@@ -1,7 +1,7 @@
 export const businessCategoryOptions = [
   {
     label: "Other",
-    value: "other",
+    value: "Other",
   },
   {
     label: "B2G",

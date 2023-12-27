@@ -35,11 +35,11 @@ export default function PersonalizeForm() {
       <div className={cls.inputs_wrapper}>
         <InputWrapper>
           <InputLabel label="Sector (niche) of your business?" />
-          <SelectInput name="business_type_id" options={businessSectorOptions} />
+          <SelectInput name="Project_type_id" options={businessSectorOptions} />
         </InputWrapper>
         <InputWrapper>
           <InputLabel label="What type of business is your project?" />
-          <SelectInput name="Project_type_id" options={businessTypeOptions} />
+          <SelectInput name="business_type_id" options={businessTypeOptions} />
         </InputWrapper>
       </div>
     </section>

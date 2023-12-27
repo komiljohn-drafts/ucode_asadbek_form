@@ -1,12 +1,11 @@
 import Container from "../../../../layouts/Container";
-import cls from "./styles.module.scss";
 
 const Navbar = () => {
   return (
     <header>
       <Container>
         <nav>
-          <p>LOGO</p>
+          <img src="/UzVC-logo-white.png" width="168" />
         </nav>
       </Container>
     </header>
